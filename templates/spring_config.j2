@@ -1,0 +1,7 @@
+{% for interface in mpls_interfaces %}
+set interfaces {{ interface.name }} unit {{ interface.unit }} family mpls
+set protocols mpls interface {{ interface.name }}.{{ interface.unit }}
+{% endfor %}
+set protocols isis source-packet-routing srgb start-label {{ spring_settings.start_label }}
+set protocols isis source-packet-routing srgb index-range {{ spring_settings.index_range }}
+set protocols isis source-packet-routing node-segment ipv4-index {{ spring_settings.node_id }} 
