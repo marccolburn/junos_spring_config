@@ -2,6 +2,6 @@
 delete interfaces {{ interface.name }} unit {{ interface.unit }} family mpls
 delete protocols mpls interface {{ interface.name }}.{{ interface.unit }}
 {% endfor %}
-delete protocols isis source-packet-routing srgb start-label {{ spring_deletetings.start_label }}
-delete protocols isis source-packet-routing srgb index-range {{ spring_deletetings.index_range }}
-delete protocols isis source-packet-routing node-segment ipv4-index {{ spring_deletetings.node_id }} 
+delete protocols isis source-packet-routing srgb start-label {{ spring_settings.start_label }}
+delete protocols isis source-packet-routing srgb index-range {{ spring_settings.index_range }}
+delete protocols isis source-packet-routing node-segment ipv4-index {{ spring_settings.node_id }} 
